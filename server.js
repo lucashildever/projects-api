@@ -14,10 +14,7 @@ mongoose.connect(DB, {
         useCreateIndex: true,
         useFindAndModify: false
     })
-    .then(() => {
-        if(process.env.NODE_ENV === 'development')
-            console.log('connected successfully')
-        })
+    .then(() => console.log('database connected successfully'))
     .catch(err => console.log(err));
 
 const port = process.env.PORT || 5555;
@@ -26,3 +23,5 @@ app.listen(port, () => {
     if(process.env.NODE_ENV === 'development')
         console.log(`Server is running on port ${port}`)
     });
+
+module.exports = app;
