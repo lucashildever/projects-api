@@ -4,8 +4,12 @@ const { Schema } = mongoose;
 
 const projectSchema = new Schema({
     title: String,
-    description: String,
-    techs: Array
+    techs: Array,
+    img: String,
+    code: String,
+    live: String,
+    desc: String,
+    descPt: String
 })
 
 const Projects = mongoose.model('Project', projectSchema);
