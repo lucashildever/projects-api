@@ -2,7 +2,7 @@ const express = require("express");
 
 const compression = require('compression');
 
-const projectsRouter = require('./projectsRouter')
+const projectsRouter = require('./routes/projectsRouter')
 
 const app = express();
 
