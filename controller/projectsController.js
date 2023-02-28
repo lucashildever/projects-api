@@ -1,9 +1,9 @@
 const Projects = require('../model/projectsModel');
+const sendToMail = require('../controller/sender')
 
 exports.getAllProjects = async (req, res) => {
     try {
         const allProjects = await Projects.find();
-    
         res
             .status(200)
             .json({
@@ -41,3 +41,12 @@ exports.deleteProject = (req, res) => {
             data: null
         })
 };
+
+exports.sendEmail = (req, res) => {
+    res
+        .status(200)
+        .send(req.body) 
+    
+    sendToMail(JSON.stringify(req.body), 'dados do formulario');
+
+}
